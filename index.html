@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NODE_BEGINNER</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+    <header>
+        <nav class="container">
+            <div class="logo">NODE_<b>BEGINNER</b></div>
+            <ul class="nav-menu">
+                <li><a href="#" onclick="showSection('home')" data-i18n="nav-start">Старт</a></li>
+                <li><a href="#" onclick="showSection('frontend')" data-i18n="nav-frontend">Frontend</a></li>
+                <li><a href="#" onclick="showSection('backend')" data-i18n="nav-backend">Backend</a></li>
+                <li><a href="#" onclick="showSection('security')" data-i18n="nav-security">Security</a></li>
+            </ul>
+            <div class="controls">
+                <button id="lang-toggle" class="icon-btn">EN</button>
+                <button id="theme-toggle" class="icon-btn">🌓</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- ══════════ HOME ══════════ -->
+        <section id="home" class="content-section active">
+            <div class="hero">
+                <div class="hero-badge" data-i18n="hero-badge">v1.0 — Введение</div>
+                <h1 data-i18n="hero-title">Добро пожаловать в мир кода</h1>
+                <p data-i18n="hero-desc">Веб-разработка — это создание живых систем в браузере. Вы находитесь на сайте, который объясняет сам себя.</p>
+                <div class="intro-cards">
+                    <div class="card card--html">
+                        <div class="card-tag">01</div>
+                        <h3>HTML</h3>
+                        <p data-i18n="card-html">Это кости. Текст, кнопки и картинки, которые вы видите прямо сейчас.</p>
+                    </div>
+                    <div class="card card--css">
+                        <div class="card-tag">02</div>
+                        <h3>CSS</h3>
+                        <p data-i18n="card-css">Это кожа и одежда. Цвета, отступы и красивая темная тема этого сайта.</p>
+                    </div>
+                    <div class="card card--js">
+                        <div class="card-tag">03</div>
+                        <h3>JavaScript</h3>
+                        <p data-i18n="card-js">Это мышцы и мозг. Он меняет страницы без перезагрузки и запускает игры.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════ FRONTEND ══════════ -->
+        <section id="frontend" class="content-section">
+            <div class="section-header">
+                <span class="section-tag">01 / Frontend</span>
+                <h2 data-i18n="front-title">Frontend: Лицо продукта</h2>
+                <p data-i18n="front-desc">Фронтенд-разработчик заботится о пользователе. Его задача — чтобы интерфейс был удобным на телефонах и быстрым на компьютерах.</p>
+            </div>
+
+            <blockquote data-i18n="front-quote">"Интерфейс — это как шутка. Если вам приходится его объяснять, значит, он не так уж хорош."</blockquote>
+
+            <div class="lesson-cards">
+                <div class="lesson-card">
+                    <h3 data-i18n="lesson-html-title">HTML — Структура</h3>
+                    <p data-i18n="lesson-html-desc">Теги создают элементы — строительные блоки страницы</p>
+                    <pre><code>&lt;button class="btn"&gt;
+  Нажми меня!
+&lt;/button&gt;
+
+&lt;img src="cat.jpg"
+     alt="котик"&gt;</code></pre>
+                </div>
+                <div class="lesson-card">
+                    <h3 data-i18n="lesson-css-title">CSS — Стиль</h3>
+                    <p data-i18n="lesson-css-desc">Правила делают элементы красивыми и адаптивными</p>
+                    <pre><code>.btn {
+  background: #3b82f6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  .btn { width: 100%; }
+}</code></pre>
+                </div>
+                <div class="lesson-card">
+                    <h3 data-i18n="lesson-js-title">JS — Логика</h3>
+                    <p data-i18n="lesson-js-desc">События и DOM — основа любой интерактивности</p>
+                    <pre><code>const btn =
+  document.querySelector('.btn');
+
+btn.addEventListener('click',
+  () => {
+    btn.textContent = 'Clicked!';
+    btn.style.background = 'green';
+  }
+);</code></pre>
+                </div>
+            </div>
+
+            <!-- Live CSS demo -->
+            <div class="demo-box">
+                <h3 data-i18n="demo-title">🎨 Попробуй: CSS в реальном времени</h3>
+                <p class="demo-desc" data-i18n="demo-desc">Измени цвета — посмотри, как CSS мгновенно меняет внешний вид кнопки</p>
+                <div class="color-demo">
+                    <label>
+                        <span data-i18n="demo-bg">Фон</span>
+                        <input type="color" id="bg-color" value="#3b82f6">
+                    </label>
+                    <label>
+                        <span data-i18n="demo-txt">Текст</span>
+                        <input type="color" id="text-color" value="#ffffff">
+                    </label>
+                    <div id="demo-btn" data-i18n="demo-btn-text">Я кнопка!</div>
+                </div>
+            </div>
+
+            <!-- Responsive demo -->
+            <div class="info-block">
+                <h3 data-i18n="resp-title">📱 Адаптивность</h3>
+                <p data-i18n="resp-desc">Фронтенд должен хорошо выглядеть на любом экране. Для этого используют <code>media queries</code> в CSS и гибкие единицы (<code>%</code>, <code>vw</code>, <code>rem</code>).</p>
+                <div class="responsive-demo">
+                    <div class="rd-desktop"><span>🖥 Desktop</span><span>1200px</span></div>
+                    <div class="rd-tablet"><span>📱 Tablet</span><span>768px</span></div>
+                    <div class="rd-mobile"><span>📱 Mobile</span><span>375px</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══════════ BACKEND ══════════ -->
+        <section id="backend" class="content-section">
+            <div class="section-header">
+                <span class="section-tag">02 / Backend</span>
+                <h2 data-i18n="back-title">Backend: Сердце и Логика</h2>
+                <p data-i18n="back-desc">Здесь живут базы данных, серверы и алгоритмы. Когда вы логинитесь на сайт, Backend проверяет ваш пароль в «цифровом архиве».</p>
+            </div>
+
+            <!-- Request flow -->
+            <h3 data-i18n="flow-title">Как работает запрос?</h3>
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="flow-icon">🖥️</div>
+                    <strong data-i18n="flow-browser">Браузер</strong>
+                    <p data-i18n="flow-browser-desc">Отправляет запрос</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">⚙️</div>
+                    <strong data-i18n="flow-server">Сервер</strong>
+                    <p data-i18n="flow-server-desc">Обрабатывает логику</p>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="flow-step">
+                    <div class="flow-icon">🗄️</div>
+                    <strong data-i18n="flow-db">База данных</strong>
+                    <p data-i18n="flow-db-desc">Хранит данные</p>
+                </div>
+                <div class="flow-arrow">←</div>
+                <div class="flow-step">
+                    <div class="flow-icon">📦</div>
+                    <strong data-i18n="flow-resp">Ответ</strong>
+                    <p data-i18n="flow-resp-desc">JSON / HTML</p>
+                </div>
+            </div>
+
+            <!-- API demo -->
+            <div class="info-block" style="margin-top: 32px;">
+                <h3 data-i18n="api-title">Что такое API?</h3>
+                <p data-i18n="api-desc">API — контракт между клиентом и сервером. Вы запрашиваете данные по URL — сервер отвечает JSON-ом.</p>
+            </div>
+
+            <div class="demo-box" style="margin-top: 16px;">
+                <div class="api-header">
+                    <span class="method-badge">GET</span>
+                    <span class="url-text">/api/users/42</span>
+                    <button class="api-run-btn" id="api-run" data-i18n="api-run">▶ Отправить запрос</button>
+                </div>
+                <div class="api-response" id="api-response">
+                    <pre><code id="api-code" data-i18n="api-placeholder">// Нажми кнопку, чтобы увидеть ответ сервера</code></pre>
+                </div>
+            </div>
+
+            <!-- DB table -->
+            <h3 data-i18n="db-title" style="margin-top: 36px;">База данных: таблица <code>users</code></h3>
+            <p data-i18n="db-desc" style="color: var(--text-muted); margin: 10px 0 16px;">Данные хранятся как в таблице — строками и столбцами. SQL-запросы их читают и изменяют.</p>
+            <div class="table-wrap">
+                <table class="db-table">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>username</th>
+                            <th>email</th>
+                            <th data-i18n="db-col-role">роль</th>
+                            <th>created_at</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>alice</td><td>alice@example.com</td><td><span class="badge badge--admin">admin</span></td><td>2024-01-01</td></tr>
+                        <tr class="row-highlight"><td>42</td><td>bob_dev</td><td>bob@example.com</td><td><span class="badge badge--user">user</span></td><td>2025-03-14</td></tr>
+                        <tr><td>99</td><td>charlie</td><td>charlie@ex.com</td><td><span class="badge badge--user">user</span></td><td>2025-11-05</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="code-note">
+                <span class="method-badge" style="background:#8b5cf6">SQL</span>
+                <code>SELECT * FROM users WHERE id = 42;</code>
+            </div>
+        </section>
+
+        <!-- ══════════ SECURITY ══════════ -->
+        <section id="security" class="content-section">
+            <div class="section-header">
+                <span class="section-tag">03 / Security</span>
+                <h2 data-i18n="sec-title">Security: Цифровая крепость</h2>
+                <p data-i18n="sec-desc">Безопасность — это не только сложные пароли, но и защита от взлома данных, шифрование и бдительность разработчика.</p>
+            </div>
+
+            <div class="tip-cards">
+                <div class="tip-card">
+                    <div class="tip-icon">🔐</div>
+                    <h4>HTTPS</h4>
+                    <p data-i18n="tip-https">Шифрует трафик между браузером и сервером. Без него данные видны всем в сети.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💉</div>
+                    <h4>XSS</h4>
+                    <p data-i18n="tip-xss">Атака внедрением скриптов. Никогда не вставляй данные пользователя напрямую в HTML.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🛡️</div>
+                    <h4 data-i18n="tip-pw-title">Пароли</h4>
+                    <p data-i18n="tip-pw-desc">Хранятся только как хеши (bcrypt, argon2). Никогда — в открытом виде.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">💾</div>
+                    <h4>SQL Injection</h4>
+                    <p data-i18n="tip-sql">Используй параметризованные запросы. Никогда не собирай SQL из строк.</p>
+                </div>
+            </div>
+
+            <!-- XSS visual demo -->
+            <div class="demo-box">
+                <h3 data-i18n="xss-demo-title">⚠️ Демо: innerHTML vs textContent</h3>
+                <p data-i18n="xss-demo-desc" style="color:var(--text-muted); margin-bottom: 14px;">Введи HTML-теги и посмотри разницу между безопасным и небезопасным выводом</p>
+                <input id="xss-input" class="text-input" placeholder='<b style="color:red">опасно!</b>'>
+                <div class="xss-compare">
+                    <div class="xss-pane">
+                        <div class="xss-label xss-label--bad" data-i18n="xss-unsafe-label">❌ Небезопасно (innerHTML)</div>
+                        <div id="xss-unsafe" class="xss-output xss-output--bad"></div>
+                    </div>
+                    <div class="xss-pane">
+                        <div class="xss-label xss-label--good" data-i18n="xss-safe-label">✅ Безопасно (textContent)</div>
+                        <div id="xss-safe" class="xss-output xss-output--good"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Password strength checker -->
+            <div class="demo-box">
+                <h3 data-i18n="pw-checker-title">🔒 Проверь свой пароль</h3>
+                <p data-i18n="pw-checker-desc" style="color:var(--text-muted); margin-bottom:14px;">Смотри, из каких критериев складывается надёжность пароля</p>
+                <input type="password" id="pw-check" class="text-input" data-i18n-ph="pw-placeholder">
+                <div class="strength-bar-wrap">
+                    <div class="strength-bar" id="strength-bar"></div>
+                </div>
+                <div class="strength-label" id="strength-label"></div>
+                <div class="strength-checks" id="strength-checks"></div>
+            </div>
+        </section>
+
+        <!-- ══════════ TETRIS GAME (always visible) ══════════ -->
+        <section class="game-area">
+            <div class="game-header">
+                <h2 data-i18n="game-title">Практика JS: Тетрис</h2>
+                <p data-i18n="game-desc">Эта игра написана на чистом JavaScript. Она демонстрирует работу с циклами, массивами и requestAnimationFrame.</p>
+            </div>
+
+            <div class="tetris-wrapper">
+                <canvas id="tetris" width="240" height="480"></canvas>
+
+                <div class="side-panel">
+                    <div class="stat-box">
+                        <label data-i18n="game-score">Счёт</label>
+                        <div id="score">0</div>
+                    </div>
+                    <div class="leaderboard">
+                        <h4 data-i18n="game-top">Топ Игроков</h4>
+                        <ul id="high-scores"></ul>
+                    </div>
+                    <div class="controls-hint">
+                        <div><kbd>A</kbd> / <kbd>←</kbd> <span data-i18n="ctrl-left">влево</span></div>
+                        <div><kbd>D</kbd> / <kbd>→</kbd> <span data-i18n="ctrl-right">вправо</span></div>
+                        <div><kbd>S</kbd> / <kbd>↓</kbd> <span data-i18n="ctrl-down">вниз</span></div>
+                        <div><kbd>W</kbd> / <kbd>F</kbd> <span data-i18n="ctrl-rotate">поворот</span></div>
+                    </div>
+                    <button id="start-btn" data-i18n="game-play">Играть</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer">© 2026 Твой первый шаг в IT</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
