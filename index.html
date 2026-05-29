@@ -31,9 +31,33 @@
         <!-- ══════════ HOME ══════════ -->
         <section id="home" class="content-section active">
             <div class="hero">
-                <div class="hero-badge" data-i18n="hero-badge">v1.0 — Введение</div>
+                <div class="hero-badge" data-i18n="hero-badge">v2.0 — Погружение</div>
                 <h1 data-i18n="hero-title">Добро пожаловать в мир кода</h1>
                 <p data-i18n="hero-desc">Веб-разработка — это создание живых систем в браузере. Вы находитесь на сайте, который объясняет сам себя.</p>
+
+                <!-- Stats bar -->
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span class="stat-num">1.9B+</span>
+                        <span class="stat-lbl" data-i18n="stat-sites">сайтов в мире</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">28M</span>
+                        <span class="stat-lbl" data-i18n="stat-devs">разработчиков</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">~$90K</span>
+                        <span class="stat-lbl" data-i18n="stat-salary">ЗП / год (США)</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">∞</span>
+                        <span class="stat-lbl" data-i18n="stat-possible">возможностей</span>
+                    </div>
+                </div>
+
                 <div class="intro-cards">
                     <div class="card card--html">
                         <div class="card-tag">01</div>
@@ -50,6 +74,67 @@
                         <h3>JavaScript</h3>
                         <p data-i18n="card-js">Это мышцы и мозг. Он меняет страницы без перезагрузки и запускает игры.</p>
                     </div>
+                </div>
+            </div>
+
+            <!-- Roadmap -->
+            <div class="info-block roadmap-block">
+                <h3 data-i18n="roadmap-title">🗺 Путь веб-разработчика</h3>
+                <p data-i18n="roadmap-subtitle" style="color:var(--text-muted);font-size:0.9rem;margin:6px 0 28px;">Ты здесь → двигайся дальше по каждому разделу этого сайта</p>
+                <div class="roadmap">
+                    <div class="rm-step rm-done">
+                        <div class="rm-dot">1</div>
+                        <strong>HTML</strong>
+                        <small data-i18n="rm-html">Структура</small>
+                    </div>
+                    <div class="rm-line rm-done"></div>
+                    <div class="rm-step rm-done">
+                        <div class="rm-dot">2</div>
+                        <strong>CSS</strong>
+                        <small data-i18n="rm-css">Стили</small>
+                    </div>
+                    <div class="rm-line rm-active"></div>
+                    <div class="rm-step rm-current">
+                        <div class="rm-dot">3</div>
+                        <strong>JS</strong>
+                        <small data-i18n="rm-js">Логика</small>
+                    </div>
+                    <div class="rm-line"></div>
+                    <div class="rm-step">
+                        <div class="rm-dot">4</div>
+                        <strong>React</strong>
+                        <small data-i18n="rm-react">Фреймворк</small>
+                    </div>
+                    <div class="rm-line"></div>
+                    <div class="rm-step">
+                        <div class="rm-dot">5</div>
+                        <strong>Node.js</strong>
+                        <small data-i18n="rm-node">Backend</small>
+                    </div>
+                    <div class="rm-line"></div>
+                    <div class="rm-step">
+                        <div class="rm-dot">6</div>
+                        <strong>DB</strong>
+                        <small data-i18n="rm-db">База данных</small>
+                    </div>
+                    <div class="rm-line"></div>
+                    <div class="rm-step">
+                        <div class="rm-dot">🚀</div>
+                        <strong>Deploy</strong>
+                        <small data-i18n="rm-deploy">Публикация</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mini Quiz -->
+            <div class="info-block quiz-block">
+                <h3 data-i18n="quiz-title">🧠 Быстрый тест</h3>
+                <p data-i18n="quiz-subtitle" style="color:var(--text-muted);font-size:0.9rem;margin:6px 0 20px;">3 вопроса — проверь базовое понимание</p>
+                <div id="quiz-container"></div>
+                <div id="quiz-result" class="quiz-result" style="display:none;"></div>
+                <div class="quiz-actions">
+                    <button id="quiz-btn" class="quiz-btn" onclick="submitQuiz()" data-i18n="quiz-check">Проверить</button>
+                    <button id="quiz-retry" class="quiz-btn quiz-btn--ghost" onclick="initQuiz()" style="display:none" data-i18n="quiz-retry">Пройти снова</button>
                 </div>
             </div>
         </section>
@@ -121,6 +206,29 @@ btn.addEventListener('click',
                 </div>
             </div>
 
+            <!-- Box Model Demo (NEW) -->
+            <div class="demo-box">
+                <h3 data-i18n="box-title">📦 CSS Box Model — интерактивно</h3>
+                <p class="demo-desc" data-i18n="box-desc">Наведи на слой коробки — узнай, что он делает</p>
+                <div class="box-model-wrap">
+                    <div class="bm-margin" id="bm-margin">
+                        <div class="bm-layer-tag">margin</div>
+                        <div class="bm-border" id="bm-border">
+                            <div class="bm-layer-tag">border</div>
+                            <div class="bm-padding" id="bm-padding">
+                                <div class="bm-layer-tag">padding</div>
+                                <div class="bm-content" id="bm-content">
+                                    <span data-i18n="bm-content-lbl">content</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bm-info-bar" id="bm-info">
+                    <span data-i18n="bm-hint">← Наведи на любой слой</span>
+                </div>
+            </div>
+
             <!-- Responsive demo -->
             <div class="info-block">
                 <h3 data-i18n="resp-title">📱 Адаптивность</h3>
@@ -129,6 +237,57 @@ btn.addEventListener('click',
                     <div class="rd-desktop"><span>🖥 Desktop</span><span>1200px</span></div>
                     <div class="rd-tablet"><span>📱 Tablet</span><span>768px</span></div>
                     <div class="rd-mobile"><span>📱 Mobile</span><span>375px</span></div>
+                </div>
+            </div>
+
+            <!-- Frameworks (NEW) -->
+            <div class="info-block" style="margin-top:28px;">
+                <h3 data-i18n="fw-title">⚛️ Популярные фреймворки</h3>
+                <p data-i18n="fw-desc" style="color:var(--text-muted);font-size:0.9rem;margin:8px 0 20px;">После JavaScript — переход на фреймворк. Они ускоряют создание сложных интерфейсов</p>
+                <div class="fw-cards">
+                    <div class="fw-card fw-card--react">
+                        <div class="fw-head">
+                            <span class="fw-icon">⚛️</span>
+                            <h4>React</h4>
+                            <span class="fw-badge" data-i18n="fw-react-pct">~42% рынка</span>
+                        </div>
+                        <p data-i18n="fw-react-desc">Создан Facebook. Самый популярный. Идеален для сложных SPA и экосистем — Next.js, React Native.</p>
+                        <pre><code>function App() {
+  const [count, setCount] = useState(0);
+  return &lt;button onClick={() =&gt;
+    setCount(count + 1)}&gt;
+    Clicked {count} times
+  &lt;/button&gt;;
+}</code></pre>
+                    </div>
+                    <div class="fw-card fw-card--vue">
+                        <div class="fw-head">
+                            <span class="fw-icon">💚</span>
+                            <h4>Vue</h4>
+                            <span class="fw-badge" data-i18n="fw-vue-pct">~19% рынка</span>
+                        </div>
+                        <p data-i18n="fw-vue-desc">Лёгкий и дружелюбный старт. Хорош для небольших и средних проектов. Популярен в Азии и Европе.</p>
+                        <pre><code>&lt;template&gt;
+  &lt;button @click="count++"&gt;
+    Clicked {{ count }} times
+  &lt;/button&gt;
+&lt;/template&gt;</code></pre>
+                    </div>
+                    <div class="fw-card fw-card--svelte">
+                        <div class="fw-head">
+                            <span class="fw-icon">🔥</span>
+                            <h4>Svelte</h4>
+                            <span class="fw-badge fw-badge--new" data-i18n="fw-svelte-pct">Растёт 🚀</span>
+                        </div>
+                        <p data-i18n="fw-svelte-desc">Компилируется в чистый JS без виртуального DOM. Меньше кода — больше скорости. Будущее фронтенда.</p>
+                        <pre><code>&lt;script&gt;
+  let count = 0;
+&lt;/script&gt;
+
+&lt;button on:click={() =&gt; count++}&gt;
+  Clicked {count} times
+&lt;/button&gt;</code></pre>
+                    </div>
                 </div>
             </div>
         </section>
@@ -184,6 +343,86 @@ btn.addEventListener('click',
                 <div class="api-response" id="api-response">
                     <pre><code id="api-code" data-i18n="api-placeholder">// Нажми кнопку, чтобы увидеть ответ сервера</code></pre>
                 </div>
+            </div>
+
+            <!-- Auth / JWT (NEW) -->
+            <div class="info-block" style="margin-top:36px;">
+                <h3 data-i18n="auth-title">🔑 Аутентификация: сессии vs JWT</h3>
+                <p data-i18n="auth-desc" style="color:var(--text-muted);font-size:0.9rem;margin:8px 0 20px;">Как сервер узнаёт, кто ты после логина? Два главных подхода:</p>
+                <div class="auth-compare">
+                    <div class="auth-card">
+                        <div class="auth-icon">🍪</div>
+                        <h4 data-i18n="auth-sess-title">Сессии + Cookie</h4>
+                        <ol class="auth-steps">
+                            <li data-i18n="auth-s1">Логин → сервер создаёт сессию в БД</li>
+                            <li data-i18n="auth-s2">Браузер получает <code>session_id</code> в cookie</li>
+                            <li data-i18n="auth-s3">Каждый запрос → сервер ищет сессию в БД</li>
+                            <li data-i18n="auth-s4">Данные хранятся на сервере</li>
+                        </ol>
+                        <div class="auth-tag auth-tag--ok" data-i18n="auth-s-note">✓ Просто отозвать доступ</div>
+                    </div>
+                    <div class="auth-card">
+                        <div class="auth-icon">🎟️</div>
+                        <h4>JWT (JSON Web Token)</h4>
+                        <ol class="auth-steps">
+                            <li data-i18n="auth-j1">Логин → сервер подписывает токен</li>
+                            <li data-i18n="auth-j2">Браузер хранит токен в <code>localStorage</code></li>
+                            <li data-i18n="auth-j3">Каждый запрос: <code>Authorization: Bearer &lt;jwt&gt;</code></li>
+                            <li data-i18n="auth-j4">Сервер проверяет подпись — без обращения к БД</li>
+                        </ol>
+                        <div class="auth-tag auth-tag--warn" data-i18n="auth-j-note">⚡ Масштабируется лучше</div>
+                    </div>
+                </div>
+                <!-- JWT visual -->
+                <div class="jwt-visual">
+                    <div class="jwt-part jwt-h">
+                        <div class="jwt-lbl">Header</div>
+                        <code>eyJhbGciOiJIUzI1NiJ9</code>
+                    </div>
+                    <span class="jwt-dot">.</span>
+                    <div class="jwt-part jwt-p">
+                        <div class="jwt-lbl">Payload</div>
+                        <code>eyJ1c2VySWQiOjQyfQ</code>
+                    </div>
+                    <span class="jwt-dot">.</span>
+                    <div class="jwt-part jwt-s">
+                        <div class="jwt-lbl">Signature</div>
+                        <code>SflKxwRJSMeKKF2QT4fw</code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Node.js code (NEW) -->
+            <div class="info-block" style="margin-top:28px;">
+                <h3 data-i18n="node-title">⚡ Node.js — Backend на JavaScript</h3>
+                <p data-i18n="node-desc" style="color:var(--text-muted);font-size:0.9rem;margin:8px 0 16px;">Node.js позволяет писать сервер на том же языке, что и браузер. Вот простой REST API с Express:</p>
+                <pre><code>// server.js — Node.js + Express
+const express = require('express');
+const app     = express();
+app.use(express.json());
+
+// GET /api/users/:id — получить юзера
+app.get('/api/users/:id', (req, res) => {
+  const user = db.find(u => u.id === +req.params.id);
+  if (!user) return res.status(404).json({ error: 'Not found' });
+  res.json(user);
+});
+
+// POST /api/users — создать юзера
+app.post('/api/users', (req, res) => {
+  const { username, email } = req.body;
+  const newUser = { id: Date.now(), username, email };
+  db.push(newUser);
+  res.status(201).json(newUser);   // 201 = Created
+});
+
+// DELETE /api/users/:id — удалить
+app.delete('/api/users/:id', (req, res) => {
+  db = db.filter(u => u.id !== +req.params.id);
+  res.status(204).send();          // 204 = No Content
+});
+
+app.listen(3000, () => console.log('🚀 Server on :3000'));</code></pre>
             </div>
 
             <!-- DB table -->
@@ -242,6 +481,39 @@ btn.addEventListener('click',
                     <h4>SQL Injection</h4>
                     <p data-i18n="tip-sql">Используй параметризованные запросы. Никогда не собирай SQL из строк.</p>
                 </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🌐</div>
+                    <h4>CORS</h4>
+                    <p data-i18n="tip-cors">Cross-Origin Resource Sharing. Сервер явно разрешает запросы с нужных доменов через заголовки.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">🎭</div>
+                    <h4>CSRF</h4>
+                    <p data-i18n="tip-csrf">Межсайтовая подделка запроса. Используй CSRF-токены и флаг <code>SameSite</code> для cookie.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">⏱️</div>
+                    <h4 data-i18n="tip-rate-title">Rate Limiting</h4>
+                    <p data-i18n="tip-rate">Ограничивай число запросов с одного IP. Защищает от брутфорса и DoS-атак.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-icon">📱</div>
+                    <h4>2FA / MFA</h4>
+                    <p data-i18n="tip-2fa">Двухфакторная аутентификация. Даже при утечке пароля злоумышленник не войдёт без кода.</p>
+                </div>
+            </div>
+
+            <!-- Threat Simulator (NEW) -->
+            <div class="demo-box">
+                <h3 data-i18n="threat-title">🎯 Симулятор атак</h3>
+                <p class="demo-desc" data-i18n="threat-desc">Выбери тип атаки — посмотри как она работает и как защититься</p>
+                <div class="threat-tabs">
+                    <button class="threat-tab active" onclick="showThreat('xss')">XSS</button>
+                    <button class="threat-tab" onclick="showThreat('sqli')">SQL Injection</button>
+                    <button class="threat-tab" onclick="showThreat('csrf')">CSRF</button>
+                    <button class="threat-tab" onclick="showThreat('brute')">Brute Force</button>
+                </div>
+                <div id="threat-content" class="threat-content"></div>
             </div>
 
             <!-- XSS visual demo -->
@@ -274,32 +546,71 @@ btn.addEventListener('click',
             </div>
         </section>
 
-        <!-- ══════════ TETRIS GAME (always visible) ══════════ -->
+        <!-- ══════════ GAMES ══════════ -->
         <section class="game-area">
             <div class="game-header">
-                <h2 data-i18n="game-title">Практика JS: Тетрис</h2>
-                <p data-i18n="game-desc">Эта игра написана на чистом JavaScript. Она демонстрирует работу с циклами, массивами и requestAnimationFrame.</p>
+                <h2 data-i18n="games-title">🎮 Практика JS: Игры</h2>
+                <p data-i18n="games-desc">Обе игры написаны на чистом JavaScript — никаких библиотек!</p>
             </div>
 
-            <div class="tetris-wrapper">
-                <canvas id="tetris" width="240" height="480"></canvas>
+            <!-- Game tab switcher -->
+            <div class="game-tabs-nav">
+                <button class="game-tab-btn active" data-game="tetris" onclick="switchGame('tetris')">
+                    <span>🟦</span> <span data-i18n="tab-tetris">Тетрис</span>
+                </button>
+                <button class="game-tab-btn" data-game="platformer" onclick="switchGame('platformer')">
+                    <span>🏃</span> <span data-i18n="tab-platformer">∞ Платформер</span>
+                </button>
+            </div>
 
-                <div class="side-panel">
-                    <div class="stat-box">
-                        <label data-i18n="game-score">Счёт</label>
-                        <div id="score">0</div>
+            <!-- TETRIS panel -->
+            <div id="game-tetris" class="game-panel active">
+                <p class="game-panel-desc" data-i18n="game-desc">Демонстрирует циклы, массивы и requestAnimationFrame.</p>
+                <div class="tetris-wrapper">
+                    <canvas id="tetris" width="240" height="480"></canvas>
+                    <div class="side-panel">
+                        <div class="stat-box">
+                            <label data-i18n="game-score">Счёт</label>
+                            <div id="score">0</div>
+                        </div>
+                        <div class="leaderboard">
+                            <h4 data-i18n="game-top">Топ Игроков</h4>
+                            <ul id="high-scores"></ul>
+                        </div>
+                        <div class="controls-hint">
+                            <div><kbd>A</kbd> / <kbd>←</kbd> <span data-i18n="ctrl-left">влево</span></div>
+                            <div><kbd>D</kbd> / <kbd>→</kbd> <span data-i18n="ctrl-right">вправо</span></div>
+                            <div><kbd>S</kbd> / <kbd>↓</kbd> <span data-i18n="ctrl-down">вниз</span></div>
+                            <div><kbd>W</kbd> / <kbd>F</kbd> <span data-i18n="ctrl-rotate">поворот</span></div>
+                        </div>
+                        <button id="start-btn" data-i18n="game-play">Играть</button>
                     </div>
-                    <div class="leaderboard">
-                        <h4 data-i18n="game-top">Топ Игроков</h4>
-                        <ul id="high-scores"></ul>
+                </div>
+            </div>
+
+            <!-- PLATFORMER panel -->
+            <div id="game-platformer" class="game-panel">
+                <p class="game-panel-desc" data-i18n="plat-desc">Демонстрирует физику, коллизии и бесконечную генерацию уровней на лету.</p>
+                <div class="plat-wrapper">
+                    <canvas id="platformer" width="480" height="280"></canvas>
+                    <div class="side-panel">
+                        <div class="stat-box">
+                            <label data-i18n="plat-score-lbl">Счёт</label>
+                            <div id="plat-score">0</div>
+                        </div>
+                        <div class="leaderboard">
+                            <h4 data-i18n="plat-top">Рекорды</h4>
+                            <ul id="plat-high-scores"></ul>
+                        </div>
+                        <div class="controls-hint">
+                            <div><kbd>Space</kbd> / <kbd>↑</kbd></div>
+                            <div style="font-size:0.75rem;color:var(--text-muted)" data-i18n="plat-ctrl-jump">прыжок</div>
+                            <div style="margin-top:6px"><kbd>W</kbd></div>
+                            <div style="font-size:0.75rem;color:var(--text-muted)" data-i18n="plat-ctrl-jump2">тоже прыжок</div>
+                            <div class="plat-double-hint" data-i18n="plat-double">↕↕ Двойной прыжок!</div>
+                        </div>
+                        <button id="plat-start-btn" data-i18n="game-play">Играть</button>
                     </div>
-                    <div class="controls-hint">
-                        <div><kbd>A</kbd> / <kbd>←</kbd> <span data-i18n="ctrl-left">влево</span></div>
-                        <div><kbd>D</kbd> / <kbd>→</kbd> <span data-i18n="ctrl-right">вправо</span></div>
-                        <div><kbd>S</kbd> / <kbd>↓</kbd> <span data-i18n="ctrl-down">вниз</span></div>
-                        <div><kbd>W</kbd> / <kbd>F</kbd> <span data-i18n="ctrl-rotate">поворот</span></div>
-                    </div>
-                    <button id="start-btn" data-i18n="game-play">Играть</button>
                 </div>
             </div>
         </section>
